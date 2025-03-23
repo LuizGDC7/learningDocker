@@ -49,3 +49,7 @@ AUFS (Advanced multi-layered unification filesystem) é muito usado.
 O grande objetivo de se ter várias camadas é o reuso.
 
 É possível comport imagens a partir de camadas de outras imagens.
+
+## Imagens X Containers
+
+A Imagem é um modelo que é usado para criar containers. De forma alegórica, a Imagem é como uma classe, e o container uma instância polimórfica.
