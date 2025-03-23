@@ -220,3 +220,25 @@ docker image build # constrói uma imagem
 
 docker image push # publica uma imagem em algum repositório
 ```
+
+### Criação
+
+Para criar uma imagem, crie um arquivo Dockerfile
+
+Descreva os passos que você deseja executar nesse arquivo
+
+Crie uma imagem a partir do arquivo Dockerfile
+
+```bash
+docker image build -t nomeImagem caminhoParaImagem
+```
+
+Crie um conteiner a partir da imagem
+
+```bash
+    docker conteiner run -p 8080:80 exemploDeConteiner
+```
+
+LEMBRE-SE, a cada comando no dockerfile, uma layer é criada. Se muitos comandos que executam comandos diferentes forem usados no início, a composição vai demorar mais tempo.
+
+### Enviando imagens para o DockerHub
