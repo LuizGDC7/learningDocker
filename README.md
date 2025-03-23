@@ -32,3 +32,20 @@ A boa prática é separar a aplicação entre vários containers.
 
 ## Imagens Docker
 
+Modelo de sistema de arquivo read-only para criar containers.
+
+Imagens são criadas a partir do processo Build. Esse build é um processo descritor, que descreve passo a passo as instruções para criar uma imagem.
+
+São armazenadas em repositórios Registry (DockerHub, por exemplo). 
+
+São compostas por uma ou mais camadas (layers). Uma camada representa uma ou mais mudanças no sistema de arquivos. Uma camada é também chamada de imagem intermediária.
+
+A junção de camadas forma a imagem.
+
+Apenas a última camada pode ser alterada quando o container for iniciado.
+
+AUFS (Advanced multi-layered unification filesystem) é muito usado.
+
+O grande objetivo de se ter várias camadas é o reuso.
+
+É possível comport imagens a partir de camadas de outras imagens.
