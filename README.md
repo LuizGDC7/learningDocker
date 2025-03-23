@@ -123,3 +123,68 @@ Passo 9: Reinicie o sistema ou faça logout/login para aplicar as alterações
 ```bash
     newgrp docker
 ```
+
+## Comandos básicos
+
+Run: baixamos uma imagem do registry, CRIAMOS um novo container, executamos um container na forma iterativa.
+
+```bash
+    docker container run -it nome_imagem
+```
+
+Name: Cria um nome para um container, impedindo que um novo container com o mesmo nome seja criado
+
+```bash
+    docker container run --name nome_container
+```
+
+ls: Mostra todos os containers criados
+
+```bash
+    docker container ls # Mostra os containers ativos
+
+    docker container ls -a # Mostra todos os containers, independentemente de estado
+```
+
+start: Inicia um container já criado
+
+```bash
+    docker container start nome_container
+
+    docker container start -ai nome_container # Inicia o container e prende ele ao terminal 
+```
+
+## Mapeamento 
+
+### Containers 
+
+```bash
+docker container run -p portaExterna:portaInterna nomeImagem
+
+# Exemplo 
+# docker container run -p 8080:80 nginx
+```
+
+### Pastas
+
+```bash
+    docker container run -p portaExterna:portaInterna -v caminho nomeImagem
+
+    #Exemplo
+    # docker container run -p 8080:80 -v ${pwd} nginx
+```
+
+## Executar container em background
+
+Para isso, usamos o modo Daemon.
+
+Esse modod executa o container em segundo plano.
+
+O seguinte comando é para mapear um caminho para diretório
+
+```bash
+    docker container run -d --name nome_container -p portaExterna:portaInterna -v caminho nomeImagem
+
+    # Exemplo
+    # docker container run -d --name bla -p 8080:80 -v ${pwd} nginx
+```
