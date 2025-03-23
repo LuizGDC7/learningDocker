@@ -53,3 +53,73 @@ O grande objetivo de se ter várias camadas é o reuso.
 ## Imagens X Containers
 
 A Imagem é um modelo que é usado para criar containers. De forma alegórica, a Imagem é como uma classe, e o container uma instância polimórfica.
+
+## Arquitetura
+
+![alt text](image.png)
+
+Docker Daemon (Docker server / Docker Engine)
+
+A comunicação com o Docker normalmente é feita pelo terminal, mas também pode ser feita por meio de RestAPI. É feita uma requisição ao DAEMON.
+
+O Daemon local requisita as Imagens guardadas no Registry, com elas, o Daemon monta o container e os coloca para funcionar.
+
+## Instalação
+
+![alt text](image-1.png)
+
+Quando você instala o Docker no Linux, o próprio Linux vira o Docker Host.
+
+Passo 1: Atualize o sistema
+```bash
+    sudo apt-get update
+    sudo apt-get upgrade
+```
+
+
+Passo 2: Instale pacotes necessários
+```bash
+    sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+```
+
+
+Passo 3: Adicione a chave GPG oficial do Docker
+```bash
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+```
+
+Passo 4: Adicione o repositório do Docker ao APT
+```bash
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+
+
+Passo 5: Atualize o índice de pacotes
+```bash
+    sudo apt-get update
+```
+
+
+Passo 6: Instale o Docker
+```bash
+    sudo apt-get install docker-ce docker-ce-cli containerd.io
+```
+
+
+Passo 7: Verifique se o Docker foi instalado corretamente
+```bash
+    sudo docker --version
+```
+
+
+Passo 8: Adicione seu usuário ao grupo docker (opcional, mas recomendado)
+```bash
+    sudo usermod -aG docker $USER
+```
+
+
+Passo 9: Reinicie o sistema ou faça logout/login para aplicar as alterações
+```bash
+    newgrp docker
+```
