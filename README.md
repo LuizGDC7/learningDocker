@@ -242,3 +242,19 @@ Crie um conteiner a partir da imagem
 LEMBRE-SE, a cada comando no dockerfile, uma layer é criada. Se muitos comandos que executam comandos diferentes forem usados no início, a composição vai demorar mais tempo.
 
 ### Enviando imagens para o DockerHub
+
+Tendo em posse sua conta no DockerHub, você vai fazer o seguinte:
+
+1 - Nomear sua imagem usando uma tag, no formato seuNome/imagem
+
+2- logar no seu docker
+
+3- Fazer o push da imagem ao DockerHub
+
+```bash
+    docker image tag nomeAtualImagem nomeUsuario/nomeAtualImagem
+
+    docker login --username=nomeUsuario
+
+    docker image push nomeUsuario/nomeAtualImagem
+```
