@@ -154,6 +154,12 @@ start: Inicia um container já criado
     docker container start -ai nome_container # Inicia o container e prende ele ao terminal 
 ```
 
+remover imagem:
+
+```bash
+    docker nome_magem rm 
+```
+
 ## Mapeamento 
 
 ### Containers 
@@ -187,4 +193,30 @@ O seguinte comando é para mapear um caminho para diretório
 
     # Exemplo
     # docker container run -d --name bla -p 8080:80 -v ${pwd} nginx
+```
+
+para parar, use docker container stop nome_container 
+
+### logs
+
+```bash
+    docker container logs nome_container 
+```
+
+## Construindo imagens
+
+```bash
+docker image pull # baixa uma imagem
+
+docker imagem ls # mostra as imagens baixadas
+
+docker image rm # remove uma imagem
+
+docker image inspect # informações sobre uma imagem
+
+docker image tag nome_tag # dá um apelido a uma imagem
+
+docker image build # constrói uma imagem
+
+docker image push # publica uma imagem em algum repositório
 ```
